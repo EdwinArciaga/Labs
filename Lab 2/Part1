@@ -1,0 +1,24 @@
+main: 
+
+li s0, 15
+li s1, 10
+li s2, 5
+li s3, 2
+li s4, 18
+li s5, -3
+li s6, 0
+
+SUB a0, s0, s1
+MUL a1, s2, s3
+SUB a2, s4, s5
+DIV a3, s0, s2
+
+ADD a0, a0, a1
+ADD a0, a0, a2
+SUB a0, a0, a3
+
+ADDI s6, a0, 0
+
+
+
+
