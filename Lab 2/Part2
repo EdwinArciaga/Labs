@@ -12,7 +12,7 @@ li s8, 7
 
 blt s0, s1, jump
 
-condition: 
+check: 
 	bgt s0, s1 C2
 	ADDi a0, s2, 1
 	BEQ a0, s8 , C2
@@ -23,7 +23,7 @@ condition:
 	
 jump: 
 	bgt s2, s7, C1
-	ble s2, s7, condition
+	ble s2, s7, check
 	
 C1: MV s3, s6 
 j EXIT 
