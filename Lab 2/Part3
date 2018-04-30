@@ -7,18 +7,18 @@ main:
 	li s4, 0
 	li s5, 1
 	
+	
 while: 
 	beq s1, s2, A
 		addi s0, s0, 1
 		addi s1, s1, 2
 		j while 
 
- A: 
+A: 
  	beq s0, s3, B 
  		addi s0, s0 ,1
  		j A
- 
-  B: 
+B: 
   	beq s1, s4, EXIT
   		sub s0, s0, s5 
   		sub s1, s1, s5
