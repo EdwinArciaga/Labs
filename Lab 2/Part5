@@ -59,5 +59,5 @@
 		BLT t0,t1,loopstart # if i < n then loop
 		mv a0,t2
 		ret 
-	Exit:
+	exit:
 
