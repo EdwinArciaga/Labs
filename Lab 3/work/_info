@@ -1,0 +1,344 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/MentorGraphics/questasim64_10.5e/examples
+T_opt
+!s110 1525677612
+VoW[FZ>Yb8^]<j<eeZfo1l0
+Z1 04 11 8 work testreg_vhd behavior 1
+=1-4437e6bbaf79-5aeffe2a-d-31a4
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.5e;63
+T_opt1
+!s110 1525493392
+V>hR<FKcHYf4X3DTV>Zkkz2
+R1
+=1-4437e6bbb01b-5aed2e8f-35e-fe4
+o-quiet -auto_acc_if_foreign -work work +acc
+R2
+n@_opt1
+R3
+R0
+Eadder_subtracter
+Z4 w1525676562
+Z5 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z6 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z7 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 dP:/WEB/Microprocessor/Labs/Lab 3
+Z11 8P:/WEB/Microprocessor/Labs/Lab 3/registers.vhd
+Z12 FP:/WEB/Microprocessor/Labs/Lab 3/registers.vhd
+l0
+L136
+V2UP2Uh?F:R`R:>aXRAnMA1
+!s100 `5Hk0fL1UhlFO`SKGb<lj0
+Z13 OL;C;10.5e;63
+32
+Z14 !s110 1525677574
+!i10b 1
+Z15 !s108 1525677573.000000
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|P:/WEB/Microprocessor/Labs/Lab 3/registers.vhd|
+Z17 !s107 P:/WEB/Microprocessor/Labs/Lab 3/registers.vhd|
+!i113 0
+Z18 o-work work -2002 -explicit
+Z19 tExplicit 1 CvgOpt 0
+Acalc
+R5
+R6
+R7
+R8
+R9
+DEx4 work 16 adder_subtracter 0 22 2UP2Uh?F:R`R:>aXRAnMA1
+l157
+L144
+Vz?hT68SO4=JA^gmhk;:C80
+!s100 DZO>YNf5GY?6Ug`BOTMPA2
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Ebitstorage
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+l0
+L12
+VdCGWj`@VbHgV172Jg^EQX1
+!s100 WJnIlGlmDL72kEaZWY7LI2
+R13
+32
+Z20 !s110 1525677573
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Amemlike
+R5
+R6
+R7
+R8
+R9
+DEx4 work 10 bitstorage 0 22 dCGWj`@VbHgV172Jg^EQX1
+l21
+L19
+V<KY=mN>W^6@>cW`V]6Y^Y2
+!s100 >C<lEnBjkno6BlaBg7zNz3
+R13
+32
+R20
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Efulladder
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+l0
+L39
+V=FPW_d1N0HAmBXP_4FHUj0
+!s100 MPWGQOD3M^:9b24Oc4LP:1
+R13
+32
+R20
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Aaddlike
+R5
+R6
+R7
+R8
+R9
+DEx4 work 9 fulladder 0 22 =FPW_d1N0HAmBXP_4FHUj0
+l49
+L48
+VYAZhA1hLlNW^KgldE^3f01
+!s100 <Eni[?PWcgZ?5R]=[zAgg3
+R13
+32
+R20
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Eregister32
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+l0
+L94
+V7`L[O<^LEEjX9T1J43KYP0
+!s100 9:KQ84d6;ck<`zJS=0n;C1
+R13
+32
+R20
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Abiggermem
+R5
+R6
+R7
+R8
+R9
+DEx4 work 10 register32 0 22 7`L[O<^LEEjX9T1J43KYP0
+l114
+L101
+VDQ1Plh9Q8QLI4PmfQ@XUo3
+!s100 8R3J7d9Ng:7Z<D9o1Wz7?1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Eregister8
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+l0
+L61
+VCmLjgjT4F;9OEK[DbRco72
+!s100 DGz4Yz>el_lHHIC:Ik3m10
+R13
+32
+R20
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Amemmy
+R5
+R6
+R7
+R8
+R9
+DEx4 work 9 register8 0 22 CmLjgjT4F;9OEK[DbRco72
+l75
+L68
+V:Oe0Q0aIzdiJQi_8z:[`D2
+!s100 Me5?7:ig]nK3B0CJE[5`b0
+R13
+32
+R20
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Eshift_register
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+l0
+L179
+V[W4KmKOV6=lGhfGlo;agF1
+!s100 3_l[<G`SX6JI8Of?0<RQ;1
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Ashifter
+R5
+R6
+R7
+R8
+R9
+DEx4 work 14 shift_register 0 22 [W4KmKOV6=lGhfGlo;agF1
+l188
+L186
+V;AM[Mk=Re;L21A6Z0lPEV0
+!s100 E]ngMKE4D?<l3?g;JBZX82
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 0
+R18
+R19
+Etestreg_vhd
+Z21 w1525406304
+R7
+R5
+R6
+R8
+R9
+R10
+Z22 8P:/WEB/Microprocessor/Labs/Lab 3/tregisterswclues.vhd
+Z23 FP:/WEB/Microprocessor/Labs/Lab 3/tregisterswclues.vhd
+l0
+L12
+ViXoQXl2a;kM[chQ:j@fB?1
+!s100 [FQ?dzLOmOKmXoOC5VXHN0
+R13
+32
+Z24 !s110 1525677564
+!i10b 1
+Z25 !s108 1525677564.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|P:/WEB/Microprocessor/Labs/Lab 3/tregisterswclues.vhd|
+Z27 !s107 P:/WEB/Microprocessor/Labs/Lab 3/tregisterswclues.vhd|
+!i113 0
+R18
+R19
+Abehavior
+R7
+R5
+R6
+R8
+R9
+DEx4 work 11 testreg_vhd 0 22 iXoQXl2a;kM[chQ:j@fB?1
+l59
+L15
+VkbOe39?Vb]5;FNY]5>AO41
+!s100 zdoKYizBG:HDl<[>DIJn_0
+R13
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 0
+R18
+R19
