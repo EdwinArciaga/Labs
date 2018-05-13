@@ -62,7 +62,15 @@ BEGIN
 	END PROCESS;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 END;
 =======
 END;
 >>>>>>> upstream/master
+=======
+END;
+>>>>>>> parent of 88e1274... Delete tALU.vhd
+=======
+END;
+>>>>>>> parent of 88e1274... Delete tALU.vhd
