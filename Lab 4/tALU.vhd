@@ -61,4 +61,8 @@ BEGIN
 		wait; -- will wait forever
 	END PROCESS;
 
+<<<<<<< HEAD
 END;
+=======
+END;
+>>>>>>> upstream/master
