@@ -11,15 +11,15 @@ Main:
 	la a4, C
 	la t4, n
 	lw t1, 0(t4)			# n = 3
-	addi t1, t1, -1			# n = 2 (to make up for the offset in indexing)	
+	addi t1, t1, -1			# n = 2 make up for offset
 	JAL Fibonacci			# call function fibonacci
 	sw a0, 0(a2)			# save value to A
 	lw t1, 4(t4)			# n = 10
-	addi t1, t1, -1			# n = 9 (to make up for the offset in indexing)	
+	addi t1, t1, -1			# n = 9 make up for offset 
 	JAL Fibonacci
 	sw a0, 0(a3)			# save value to B
 	lw t1, 8(t4)			# n = 20
-	addi t1, t1, -1			# n = 19 (to make up for the offset in indexing)	
+	addi t1, t1, -1			# n = 19 offset 
 	JAL Fibonacci
 	sw a0, 0(a4)			# save value to C
 	J Exit				# jump to exit
@@ -50,11 +50,11 @@ Else:
 	
 	
 	
-Zero:					# function to makes value = 0
+Zero:					# function value = 0
 	li a0, 1
 	jalr zero, ra, 0x0	
 
-One:					#function makes value = 1
+One:					# function value = 1
 	li a0, 1
 	jalr zero, ra, 0x0	
 
