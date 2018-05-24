@@ -1,0 +1,67 @@
+.data
+A: .word 0
+B: .word 0
+C: .word 0
+n: .word 3, 10, 20
+
+.text
+Main:
+	la a2, A  
+	la a3, B
+	la a4, C
+	la t4, n
+	lw t1, 0(t4)			# n = 3
+	addi t1, t1, -1			# n = 2 make up for offset
+	JAL Fibonacci			# call function fibonacci
+	sw a0, 0(a2)			# save value to A
+	lw t1, 4(t4)			# n = 10
+	addi t1, t1, -1			# n = 9 make up for offset 
+	JAL Fibonacci
+	sw a0, 0(a3)			# save value to B
+	lw t1, 8(t4)			# n = 20
+	addi t1, t1, -1			# n = 19 offset 
+	JAL Fibonacci
+	sw a0, 0(a4)			# save value to C
+	J Exit				# jump to exit
+
+Fibonacci:
+	li t0, 1
+	blt t1, t0, Zero		# if n <= 0, go to Zero
+	beq t1, t0, One			# if n = 1, go to One
+	bgt t1 , t0, Else		# if n > 1, go to Else
+	jalr zero, ra, 0x0		
+
+Else:
+	addi sp, sp, -12		# allocate space on stack
+	sw ra, 0(sp)			# save ra to stack
+	sw t0, 4(sp)			# save n to stack
+	addi t1, t1, -1			# n-1
+	Jal Fibonacci
+	sw a0, 8(sp)			# save result to stack
+	lw t1, 4(sp)			# re-load n into t0
+	addi t1, t1, -2			# n-2
+	JAL Fibonacci		
+	lw t1, 8(sp)			# take result of fibonacci(n-1) and load into t0
+	add a0, a0, t1			# fibonacci(n-1)+ fibonacci(n-2)
+	
+	lw ra, 0(sp)			# relable ra to go back to main function
+	addi sp, sp, 12			# deallocate memory in stack 
+	jalr zero, ra, 0x0		# go to ra
+	
+	
+	
+Zero:					# function value = 0
+	li a0, 1
+	jalr zero, ra, 0x0	
+
+One:					# function value = 1
+	li a0, 1
+	jalr zero, ra, 0x0	
+
+
+
+
+
+Exit:					# end program
+	li a7, 10
+	ecall
