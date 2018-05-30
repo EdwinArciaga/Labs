@@ -22,6 +22,7 @@ architecture staticRAM of RAM is
 
    type ram_type is array (0 to 127) of std_logic_vector(31 downto 0);
    signal i_ram : ram_type;
+   signal highz: std_logic_vector(31 DOWNTO 0) := "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ";
 
 begin
 
@@ -46,7 +47,7 @@ begin
     end if;
 
 	-- Rest of the RAM implementation
-	if (OE='0' AND (to_integer(unsigned(Address)) <=127)) THEN
+	if (OE='0' and (to_integer(unsigned(Address)) <=127)) then
 	DataOut <=  i_ram (to_integer(unsigned(Address)));
     else
 	Dataout <= highz;
