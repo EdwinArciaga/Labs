@@ -88,7 +88,7 @@ architecture remember of Registers is
         signal zeroo: std_logic_vector(31 downto 0);
 	signal zer: std_logic_vector(31 downto 0):=X"00000000";
 
-	--------INPUT FOR A0 - A7--------
+	-------- input A0 - A7--------
 	signal a0o: std_logic_vector(31 downto 0);
 	signal a1o: std_logic_vector(31 downto 0);
 	signal a2o: std_logic_vector(31 downto 0);
@@ -98,7 +98,7 @@ architecture remember of Registers is
 	signal a6o: std_logic_vector(31 downto 0);
 	signal a7o: std_logic_vector(31 downto 0);
 	
-	--------OUTPUT FOR A0 - A7 -------
+	-------- output A0 - A7 -------
 	signal a0i: std_logic_vector(31 downto 0);
 	signal a1i: std_logic_vector(31 downto 0);
 	signal a2i: std_logic_vector(31 downto 0);
@@ -111,7 +111,7 @@ architecture remember of Registers is
 	
 begin
     -- Add your code here for the Register Bank implementation
-	---DEMUX FOR CHOOSING REGISTER TO WRITE---
+	---DEMUX choosing register to write---
 	zeri <= zer;      --when WriteCmd&writereg="100000";
 	a0i <= writeData when WriteCmd&writereg="100001";
 	a1i <= writeData when WriteCmd&writereg="100010";
@@ -124,7 +124,7 @@ begin
 	
 	
 	
-	---MUX FOR CHOOSING OUTPUT REGISTER 1---
+	---MUX choose output REG1---
 	with ReadReg1 select
 		            ReadData1 <= zeroo when "00000",
 				           a0o when "00001",
@@ -140,7 +140,7 @@ begin
 	
 	
 	
-	---MuX FOR CHOOSING OUTPUT REGISTER 2---
+	---MUX choose output REG2---
 		with ReadReg2 select
 		            ReadData2 <= zeroo when "00000",
 				           a0o when "00001",
@@ -157,7 +157,7 @@ begin
 	
 --out: active low
 --in: active high
-------------------------        datin oe32 oe16 oe8      we32    we16  we8   datout
+
         x0: register32  PORT MAP(zeri, '0', '1', '1', WriteCmd, '0',  '0', zeroo);
 	a0: register32  PORT MAP(a0i, '0', '1', '1', WriteCmd, '0',  '0', a0o);
 	a1: register32  PORT MAP(a1i, '0', '1', '1', WriteCmd, '0',  '0', a1o);
@@ -194,7 +194,6 @@ begin
 		end if;
 	end process;
 	
-	-- Note that data is output only when enout = 0	
 	bitout <= q when enout = '0' else 'Z';
 end architecture memlike;
 
@@ -239,12 +238,12 @@ end architecture memmy;
 -------- 32 bit register ----------------------------------------------
 
 -- EnableOut: 
--- 0: Active     - Enable output data. Data out
--- 1: Not Active - Disable output data. No data out
+-- 0: Active     - Data out
+-- 1: Not Active - No data out
 
 -- WriteIn
--- 0: Not Active - Don't write in
--- 1: Active     - Allow write in
+-- 0: Not Active - Don't write 
+-- 1: Active     - write
 --
 
 Library ieee;
@@ -272,8 +271,8 @@ architecture biggermem of register32 is
 	end component;
 begin
   
-        w8 <= writein8  OR writein16 OR writein32; -- 8 or 16 or 32. In any case 8bits will get written
-        w16 <= writein16 OR writein32;              -- 16 or 32. In any case 16 bits
+        w8 <= writein8  OR writein16 OR writein32; -- 8 or 16 or 32. 8 bits at least 
+        w16 <= writein16 OR writein32;              -- 16 or 32. 16 bits at least
         w32 <= writein32;                           -- 32 bits
 
 	out8 <= enout8 AND enout16 AND enout32;     
@@ -288,5 +287,3 @@ begin
 	m3: register8 port map(datain(31 downto 24), out32,  w32, dataout(31 downto 24));
 
 end architecture biggermem;
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
