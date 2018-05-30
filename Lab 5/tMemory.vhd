@@ -1,3 +1,4 @@
+
 --------------------------------------------------------------------------------
 --
 -- Test Bench for LAB #5 - Memory and Register Bank
@@ -13,7 +14,7 @@ END tMemory_vhd;
 
 ARCHITECTURE behavior OF tMemory_vhd IS 
 
-	-- Component Declaration for the Unit Under Test (UUT)
+	
 	COMPONENT RAM
     	    Port(Reset:	  in std_logic;
  		 Clock:	  in std_logic;
@@ -54,7 +55,7 @@ ARCHITECTURE behavior OF tMemory_vhd IS
 
 BEGIN
 
-	-- Instantiate the Unit Under Test (UUT)
+	
 	uut1: RAM PORT MAP(
 		reset,
 		clock,
@@ -78,17 +79,18 @@ BEGIN
 	tb : PROCESS
 	BEGIN
 
-		-- Wait 100 ns for global reset to finish
+		-- Wait 100 ns 
 		wait for 100 ns;
 
 		-- Test RAM by filling in some values
-		reset <= '1';	-- Reset RAM module
+		reset <= '1';	
 		wait for 5 ns;
 		reset <= '0';
 		wait for 5 ns;
-
 		oe  <= '0';
-
+		
+		--Set dataIn = X"11111111
+		--    address = X"00000000
 		address <= X"00000000";
 		dataIn  <= X"11111111";
 		we      <= '1';
@@ -97,6 +99,8 @@ BEGIN
 		clock <= '0';
 		wait for 5 ns;
 		
+		-- Set dataIn = X"22222222
+		--     address = x"00000004
 		address <= X"00000004";
 		dataIn  <= X"22222222";
 		we      <= '1';
@@ -137,7 +141,9 @@ BEGIN
 		clock <= '0';
 		wait for 5 ns;
 
-		-- Read back content
+		
+--Reading data from memory
+
 		oe      <= '0';
 		we      <= '0';
 
@@ -189,84 +195,86 @@ BEGIN
 		clock <= '0';
 		wait for 5 ns;
 
-		-- Register Bank tests
+-- Register Bank tests
+-- Writing to the registers at at specific address
+
 		dataIn   <= X"11111111";
-		writeReg <= "01010";
+		writeReg <= "00001";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"22222222";
-		writeReg <= "01011";
+		writeReg <= "00010";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"33333333";
-		writeReg <= "01100";
+		writeReg <= "00011";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"44444444";
-		writeReg <= "01101";
+		writeReg <= "00100";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"55555555";
-		writeReg <= "01110";
+		writeReg <= "00101";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"66666666";
-		writeReg <= "01111";
+		writeReg <= "00110";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"77777777";
-		writeReg <= "10000";
+		writeReg <= "00111";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		dataIn   <= X"88888888";
-		writeReg <= "10001";
+		writeReg <= "01000";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
 
 		readReg1 <= "00000";
-		readReg2 <= "01010";
+		readReg2 <= "00001";
 		wait for 10 ns;	
 
-		readReg1 <= "01011";
-		readReg2 <= "01100";
+		readReg1 <= "00010";
+		readReg2 <= "00100";
 		wait for 10 ns;	
 
-		readReg1 <= "01101";
-		readReg2 <= "01110";
+		readReg1 <= "00011";
+		readReg2 <= "00100";
 		wait for 10 ns;	
 
-		readReg1 <= "01111";
-		readReg2 <= "10000";
+		readReg1 <= "00101";
+		readReg2 <= "01000";
 		wait for 10 ns;	
 
-		readReg1 <= "10001";
+		readReg1 <= "00111";
 		readReg2 <= "00000";
 		wait for 10 ns;	
 
-		wait; -- will wait forever
+		wait; 
 	END PROCESS;
 
 END;
